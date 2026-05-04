@@ -8,7 +8,7 @@
 #define max 512
 struct msg{
 long int msg_type;
-char some_text[max];}
+char some_text[max];};
 
 int main(){
 int running=1;
