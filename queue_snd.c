@@ -23,7 +23,7 @@ exit(0);}
 while(running){
 printf("Enter some text: \n");
 fgets(buffer,50,stdin);
-some_data.mgs_type=1;
+some_data.msg_type=1;
 strcpy(some_data.some_text,buffer);
 if(msgsnd(msgid,(void*)&some_data,max,0)==-1){
 printf("msg not sent\n");
