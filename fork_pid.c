@@ -19,7 +19,7 @@ exit(1);
 case 0:
 i=1;
 message="child process";
-no=gepid();
+no=getpid();
 no1=getppid();
 break;
 default:
