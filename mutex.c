@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>
 #define max 10
 pthread_mutex_t mutex;
-
+int counter=0;
 int i=0;
 void *up(void *arg){
-for (i=0;i<max;++i){
+for (i=0;i<max;i++){
 pthread_mutex_lock(&mutex);
 counter++;
 printf("upcount: %d\n",counter);
@@ -15,6 +16,7 @@ pthread_exit(NULL);
 }
 
 void *down(void *arg){
+sleep(1);
 for(i=0; i<max;++i){
 pthread_mutex_lock(&mutex);
 counter--;
