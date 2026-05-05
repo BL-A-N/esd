@@ -6,18 +6,18 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 #define max 512
-struct msg{
+struct msg_data{
 long int msg_type;
 char some_text[max];};
 
 int main(){
 int running =1;
 int msgid;
-struct msg some_data;
+struct msg_data some_data;
 long int msg_to_rec=0;
 msgid=msgget((key_t)12345,0666|IPC_CREAT);
 while(running){
-msgrcv(msgid,(void*)&some_data,buf,msg,0);
+msgrcv(msgid,(void*)&some_data,max,msg_to_rec,0);
 printf("Data received: %s\n",some_data.some_text);
 if(strncmp(some_data.some_text,"end",3)==0)
 {
