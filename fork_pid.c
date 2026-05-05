@@ -1,51 +1,46 @@
-#include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/wait.h>
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+#include<stdlib.h>
+#include<sys/wait.h>
 
-int main (void){
+int main(void){
 pid_t pid;
 char *message;
-int no, NO1= 1;
-int i, 1;
-printf ("calling fork \n");
-pid = fork ();
+int no,no1=1;
+int i,l;
+printf("calling fork \n");
+pid= fork();
 
-switch (pid){
+switch(pid){
 case -1:
-printf ("fork failed \n");
-exit (1);
-
+printf("fork failed \n");
+exit(1);
 case 0:
-message = "Child Process";
 i=1;
-no = getpid ();
-NO1 = getppid ();
+message="child process";
+no=gepid();
+no1=getppid();
 break;
-
 default:
-message = "Parent Process";
-i=1:
-
-no = getpid ();
-NO1 = getppid ();
+i=1;
+message="parent process";
+no=getpid();
+no1=getppid();
 break;
 }
 
-if(pid != 0) {
-printf("HP: hello from parent\n");
+if(pid!=0){
+printf("Hello from parent\n");
 wait(NULL);
-printf("CT: child has terminated n");
+printf("Child has terminated\n");
 }
 
-for (1=i; 1> 0; 1 -- ){
-puts (message);
-printf ("My ID is %d n", no);
-printf ("My parent ID is %d \n", NO1);
+for(l=i;l>0;l--){
+puts(message);
+printf("My ID is %d \n",no);
+printf("My parent ID is %d \n",no1);
 }
-return (0);
+return 0;
 }
-
-
 
