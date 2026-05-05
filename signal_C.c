@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 void my_handler(int signal){
-printf("Problem encountered %d n", signal);
+printf("Press Ctrl Z to terminate %d \n", signal);
 }
 
 int main(){
