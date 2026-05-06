@@ -36,7 +36,7 @@ int main(){
 int result;
 pthread_t rt,ct;
 void *thread_result;
-sem_init(&sem,0,1);
+sem_init(&sem,0,0);
 printf("Enter text, the program will convert it into upper case, \n To stop enter 'stop' \n");
 pthread_create(&rt,NULL,read_t,NULL);
 pthread_create(&ct,NULL,convert_t,NULL);
